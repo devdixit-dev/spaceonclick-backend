@@ -8,7 +8,7 @@ adminRoute.post('/login', adminLogin);
 
 adminRoute.get('/bookings', allBookings);
 
-adminRoute.post('/add', upload.array('images', 5), addProperty);
+adminRoute.post('/add', upload.array('images', 10), addProperty);
 
 adminRoute.put('/property/update/:id', editProperty);
 
