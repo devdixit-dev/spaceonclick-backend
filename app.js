@@ -19,7 +19,7 @@ const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(cors({
-  origin: 'http://localhost:4040',
+  origin: process.env.FRONTEND_URL,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
@@ -52,6 +52,10 @@ app.get('/', async (req, res) => {
       message: 'Internal server error'
     });
   }
+});
+
+app.get('/health', async (req, res) => {
+  return { status: 'ok', healthy: true }
 });
 
 app.get('/property/:id', async (req, res) => {
