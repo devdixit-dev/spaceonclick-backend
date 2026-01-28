@@ -10,7 +10,7 @@ import adminRoute from './routes/admin.route.js';
 import Property from './models/property.model.js';
 
 const app = express();
-const port = process.env.PORT || 4040;
+const port = process.env.PORT;
 
 connectDatabase();
 
