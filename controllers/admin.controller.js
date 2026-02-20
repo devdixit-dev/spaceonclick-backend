@@ -8,8 +8,6 @@ export const adminLogin = (req, res) => {
     const matchEmail = email === process.env.ADMIN_EMAIL;
     const matchPass = password === process.env.ADMIN_PASS;
 
-    console.log(process.env.ADMIN_EMAIL, process.env.ADMIN_PASS)
-
     if (!matchEmail || !matchPass) {
       return res.status(401).json({
         success: false,
@@ -51,8 +49,6 @@ export const allBookings = async (req, res) => {
         message: 'Booking not found or removed already'
       });
     }
-
-    console.log(bookings);
 
     return res.status(200).json({
       success: true,
